@@ -2,6 +2,10 @@ import StatusButton from './StatusButton'
 import Deletebutton from './DeleteButton'
 
 const TaskView = (props) => {
+
+    console.log(props.filteringTodo);
+
+
     return (
         <div className="viewTaskArea">
         <table>
@@ -14,11 +18,12 @@ const TaskView = (props) => {
             </thead>
             <tbody id="todoBody">
                 {/* taskの表示 */}
-                {props.todoList.map((todo, index) => {
+                
+                {props.filteringTodo.map((todo, index) => {
                 return (
                 <tr key={index+1}>
                     <td>{index+1}</td>
-                    <td>{todo}</td>
+                    <td>{todo.text}</td>
                     <td>
                         <StatusButton />
                         <Deletebutton
