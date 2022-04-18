@@ -38,7 +38,6 @@ const MakeTaskPage = (props) => {
                     })}
                 </tbody>
                 :
-                {/* ラジオボタンが'作業中'または'完了'の場合*/}
                 <tbody id="todoBody">
                     {props.filteringTodo.map((todo, index) => {
                     return (
