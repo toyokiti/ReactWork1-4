@@ -1,5 +1,6 @@
-import StatusButton from './StatusButton'
-import Deletebutton from './DeleteButton'
+import {RADIO_STATUS} from '../utils/radioStatus';
+import TaskItem from './Taskitem';
+
 
 const MakeTaskPage = (props) => {
     return (
@@ -13,53 +14,33 @@ const MakeTaskPage = (props) => {
                 </tr>
             </thead> 
             {/* taskの表示 */}
-            {props.RadioVal === 'all' ? 
+            {props.RadioVal === RADIO_STATUS.All ? 
                 <tbody id="todoBody">
-                    {props.todoList.map((todo, index) => {
-                        return (
+                    {props.todoList.map((todo, index) => (
                         <tr key={index+1}>
-                            <td>{index+1}</td>
-                            <td>{todo.text}</td>
-                            <td>
-                                <StatusButton
-                                    index={index} 
-                                    todoList={props.todoList}
-                                    setTodoList={props.setTodoList}
-                                    status={todo.status}
-                                />
-                                <Deletebutton
-                                    index={index} 
-                                    todoList={props.todoList}
-                                    setTodoList={props.setTodoList}
-                                />
-                            </td>               
+                        <TaskItem
+                        todoList={props.todoList}
+                        setTodoList = {props.setTodoList}
+                        index={index}
+                        todo={todo}
+                        />
                         </tr>
-                        ); //return 
-                    })}
+                        ))
+                    }
                 </tbody>
                 :
                 <tbody id="todoBody">
-                    {props.filteringTodo.map((todo, index) => {
-                    return (
-                    <tr key={index+1}>
-                        <td>{index+1}</td>
-                        <td>{todo.text}</td>
-                        <td>
-                            <StatusButton
-                                index={index} 
-                                todoList={props.todoList}
-                                setTodoList={props.setTodoList}
-                                status={todo.status}
-                            />
-                            <Deletebutton
-                                index={index} 
-                                todoList={props.todoList}
-                                setTodoList={props.setTodoList}
-                            />
-                        </td>               
-                    </tr>
-                    ); //return 
-                    })}
+                    {props.filteringTodo.map((todo, index) => (
+                        <tr key={index+1}>
+                        <TaskItem
+                        todoList={props.todoList}
+                        setTodoList = {props.setTodoList}
+                        index={index}
+                        todo={todo}
+                        />
+                        </tr>
+                        ))
+                    }
                 </tbody>
             } 
         </table>

@@ -16,8 +16,7 @@ const TaskView = (props) => {
             <tbody id="todoBody">
                 {/* taskの表示 */}
                 
-                {props.filteringTodo.map((todo, index) => {
-                return (
+                {props.filteringTodo.map((todo, index) => (
                 <tr key={index+1}>
                     <td>{index+1}</td>
                     <td>{todo.text}</td>
@@ -30,8 +29,8 @@ const TaskView = (props) => {
                         />
                     </td>               
                 </tr>
-                ); //return 
-                })}
+                ) //return 
+                )}
             </tbody>
         </table>
         </div>

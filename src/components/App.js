@@ -3,12 +3,13 @@ import '../App.css';
 import AddTaskForm from './AddTaskForm';
 import RadioButtonView from './RadioButtonView';
 import MakeTaskPage from './MakeTaskPage';
+import {RADIO_STATUS} from '../utils/radioStatus'
 
 const App = (props) => {
 
   const [todoList, setTodoList] = useState([]); //todoListを管理するState
   const [todoText, setTodoText] = useState(''); // 新規タスクの追加のテキストフォームに入寮される文字を管理するState
-  const [radioVal, setRadioVal] = useState('all');
+  const [radioVal, setRadioVal] = useState(RADIO_STATUS.All);
   const [filteringTodo, setFilteringTodo] = useState([]);
 
   // 追加ボタンをクリックされると実行される関数
