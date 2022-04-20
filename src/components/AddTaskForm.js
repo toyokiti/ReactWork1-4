@@ -2,7 +2,6 @@
 const AddTaskForm = (props) => {
 
     const onChangeTodoText = (event) => {
-        console.log(event.target.value);
         props.setTodoText(event.target.value)
     };
 

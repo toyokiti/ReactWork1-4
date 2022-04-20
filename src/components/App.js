@@ -8,7 +8,7 @@ const App = (props) => {
 
   const [todoList, setTodoList] = useState([]); //todoListを管理するState
   const [todoText, setTodoText] = useState(''); // 新規タスクの追加のテキストフォームに入寮される文字を管理するState
-  const [RadioVal, setRadioVal] = useState('all');
+  const [radioVal, setRadioVal] = useState('all');
   const [filteringTodo, setFilteringTodo] = useState([]);
 
   // 追加ボタンをクリックされると実行される関数
@@ -26,7 +26,7 @@ const App = (props) => {
       <RadioButtonView
         todoList={todoList}
         setRadioVal={setRadioVal}
-        RadioVal={RadioVal}
+        RadioVal={radioVal}
         filteringTodo={filteringTodo}
         setFilteringTodo={setFilteringTodo}
 
@@ -36,7 +36,7 @@ const App = (props) => {
         onClickAdd={onClickAdd}
         setTodoList = {setTodoList}
         filteringTodo={filteringTodo}
-        RadioVal={RadioVal}
+        RadioVal={radioVal}
       />  
         
       <AddTaskForm

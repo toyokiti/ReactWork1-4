@@ -3,9 +3,6 @@ import Deletebutton from './DeleteButton'
 
 const TaskView = (props) => {
 
-    console.log(props.filteringTodo);
-
-
     return (
         <div className="viewTaskArea">
         <table>
