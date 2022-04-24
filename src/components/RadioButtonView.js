@@ -1,3 +1,4 @@
+import {RADIO_STATUS} from '../utils/radioStatus'
 
 const RadioButtonView = (props) => {
 
@@ -7,16 +8,16 @@ const RadioButtonView = (props) => {
         const todos =  [...props.todoList]; 
         
         switch (event.target.value) {
-            case "all":
+            case RADIO_STATUS.All:
                 props.setFilteringTodo(todos);
                 break;
-            case "working":
+            case RADIO_STATUS.Working:
                 const workingTodo = todos.filter((todo) => {
                     return todo.status === '作業中'; 
                 });
                 props.setFilteringTodo(workingTodo);
                 break;
-            case "complete":
+            case RADIO_STATUS.Complete:
                 const completeTodo = todos.filter((todo)=>{
                     return todo.status === '完了';
                 })
