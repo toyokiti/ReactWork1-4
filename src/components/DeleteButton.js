@@ -1,13 +1,11 @@
 
-
 const DeleteButton = (props) =>{
 
     const onClickDelete = () => {
-        const todoList = props.todoList;
-        console.log(todoList);
-        todoList.splice(props.index, 1);
-        console.log(todoList);
-        props.setTodoList([todoList]);
+        const todos = props.todoList.filter((value, index) => {
+            return props.index !== index;
+        }); 
+        props.setTodoList([...todos]); //todoListを上書き
     }   
 
     return (
